@@ -1,1 +1,1 @@
-# laiszig.github.io
+laiszig.github.io
