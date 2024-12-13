@@ -8,7 +8,7 @@ description: A blog about technology and stuff related
 # if it's an external image, update below for true
 # better with square images
 external-image: false
-picture: assets/images/profile2.jpg
+picture: assets/images/profile.jpg
 
 # your site color theme, true for dark theme,
 # false to light theme, auto to switch with system.
@@ -20,7 +20,7 @@ resume: true
 resume-external: true
 resume-url: https://google.com/?q=my+resume
 
-url: https://sergiokopplin.github.io/indigo
+url: https://laiszig.github.io/
 # your url: https://USERNAME.github.io
 
 permalink: /:title/
@@ -31,7 +31,7 @@ permalink: /:title/
 # if you don't want comments in your posts, leave categories empty
 disqus:
     shortname: github # enter this from your disqus account
-    categories: [blog, project] # only show disqus for posts that have these categories
+    categories: [] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
 # facebook: myfacebook
@@ -46,7 +46,7 @@ authors:
         name: Lais Ziegler
         bio: Dev in training... 👋
         external-image: false
-        picture: assets/images/profile2.jpg
+        picture: assets/images/profile.jpg
         twitter: johndoe
 
 # do you want a larger site? change the option below
