@@ -1,18 +1,13 @@
 ---
-layout: page
+layout: guide
 title: Guide
 ---
-<section class="list">
-    {% for post in site.posts %}
-        {% if post.projects %}
-            {% if post.hidden != true %}
-                <div class="item {% if post.star %}star{% endif %}">
-                    <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">
-                        <aside><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
-                        <h3 class="title">{{ post.title }}</h3>
-                    </a>
-                </div>
-            {% endif %}
-        {% endif %}
-    {% endfor %}
+
+<section>
+    <h2>{{ site.data.samplelist.docs_list_title }}</h2>
+    <ul>
+        {% for item in site.data.samplelist.docs %}
+        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+        {% endfor %}
+    </ul>
 </section>
