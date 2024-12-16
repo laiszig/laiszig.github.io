@@ -42,12 +42,12 @@ github: laiszig
 email: laisziegler@gmail.com
 
 authors:
-    johndoe:
+    laiszig:
         name: Lais Ziegler
         bio: Dev in training... 👋
         external-image: false
         picture: assets/images/profile.jpg
-        twitter: johndoe
+        twitter: laiszig
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal

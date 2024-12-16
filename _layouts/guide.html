@@ -1,8 +1,69 @@
 ---
 layout: default
 ---
+
 {% include header.html %}
 
-{{content}}
+<style>
+    :root {
+        /* --theme-color: #029ee9; */
+        --sidebar-width: 22rem;
+        --sidebar-nav-link-margin: -0.5rem -1.5rem 0 0;
+    }
 
-{% include footer.html %}
+    /* Sidebar Container */
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: var(--sidebar-width);
+        height: 100%;
+        background-color: #2d2a2a;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        z-index: 1000;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar-nav li {
+        margin: 1rem 0;
+    }
+
+    .sidebar-nav a {
+        text-decoration: none;
+        /* color: #333; */
+        font-weight: bold;
+        display: block;
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .sidebar-nav a:hover {
+        /* background-color: var(--theme-color); */
+        text-decoration: underline;
+        text-emphasis-color: #f8f9fa;
+    }
+
+    /* Sidebar Title */
+    .sidebar-nav h2 {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+        color: var(--theme-color);
+    }
+
+    /* Adjust body content to avoid overlap with sidebar */
+    body {
+        margin-left: var(--sidebar-width);
+        padding: 2rem;
+        font-family: Arial, sans-serif;
+    }
+</style>
+
+{{content}} {% include footer.html %}

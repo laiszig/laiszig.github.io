@@ -3,11 +3,23 @@ layout: guide
 title: Guide
 ---
 
-<section>
+<!-- <section>
     <h2>{{ site.data.samplelist.docs_list_title }}</h2>
     <ul>
         {% for item in site.data.samplelist.docs %}
         <li><a href="{{ item.url }}">{{ item.title }}</a></li>
         {% endfor %}
     </ul>
-</section>
+</section> -->
+
+<!-- Sidebar Section -->
+<div class="sidebar">
+    <div class="sidebar-nav">
+        <h2>{{ site.data.samplelist.docs_list_title }}</h2>
+        <ul>
+            {% for item in site.data.samplelist.docs %}
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
