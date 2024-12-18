@@ -1,8 +1,9 @@
+docs_list_title: Software Engineer Guide
 toc:
     - title: Software Engineering
       subfolderitems:
           - page: SOLID PRINCIPLES
-            url: /guide/hello-world.md
+            url: /guide/hello-world.markdown
           - page: Thing 2
             url: /thing2.html
           - page: Thing 3
