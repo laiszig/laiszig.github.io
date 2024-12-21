@@ -1,0 +1,117 @@
+/* Root Variables */
+.guide {
+    --theme-color: #4b0082; // Theme color for the guide
+    --sidebar-width: 24rem; // Sidebar width (adjustable)
+}
+
+/* Wrapper Configurations */
+.wrapper-normal,
+.wrapper-large {
+    height: 100%;
+    width: 96%;
+    margin: 0 auto;
+}
+
+.wrapper-normal {
+    max-width: 80%; // Max width for normal wrapper
+}
+
+.wrapper-large {
+    max-width: 810px; // Max width for large wrapper
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed; // Keeps sidebar in place while scrolling
+    left: 0;
+    top: 0;
+    width: var(--sidebar-width); // Defined sidebar width
+    height: 100%; // Full viewport height
+    background-color: rgba(87, 87, 87, 0.37); // Semi-transparent background
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+    padding: 2rem; // Add inner spacing
+    z-index: 1000; // Keep above other elements
+    overflow-y: auto; // Allow vertical scrolling
+
+    /* Custom Scrollbar */
+    &::-webkit-scrollbar {
+        width: 8px; // Narrow scrollbar width
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--theme-color); // Scrollbar thumb color
+        border-radius: 4px; // Rounded edges for thumb
+        border: 2px solid rgba(87, 87, 87, 0.37); // Separate thumb from track
+
+        &:hover {
+            background-color: var(--theme-color); // Darken on hover
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.1); // Track background color
+        border-radius: 4px; // Rounded track edges
+    }
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    h2 {
+        margin-bottom: 1rem; // Add space below the title
+        font-size: 1.25rem; // Slightly larger text
+        color: var(--theme-color); // Use theme color for the title
+    }
+
+    ul {
+        list-style: none; // Remove bullet points
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin: 1rem 0; // Add space between items
+    }
+
+    a {
+        text-decoration: none; // Remove underline
+        font-weight: bold; // Make text bold
+        display: block; // Full clickable area
+        padding: 0.5rem; // Add inner spacing
+        border-radius: 4px; // Round link edges
+        transition: background-color 0.3s; // Smooth hover transition
+
+        &:hover {
+            background-color: var(--theme-color); // Change background on hover
+            color: #f8f9fa; // Light text color on hover
+        }
+    }
+}
+
+/* Content Container */
+.content-container {
+    padding: 2rem; // Add space inside the container
+    width: 100%; // Take the remaining space beside the sidebar
+    overflow: auto; // Allow scrolling if content exceeds the container height
+
+    /* Responsive Adjustments */
+    @media screen and (max-width: 768px) {
+        width: 100%; // Use full width on smaller screens
+        margin-left: 0; // Remove left margin
+        padding: 1rem; // Reduce padding for smaller screens
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        position: static; // Sidebar moves with the page
+        width: 100%; // Takes full width on small screens
+        box-shadow: none; // Remove shadow for simpler appearance
+        padding: 1rem; // Reduce padding for smaller viewports
+    }
+
+    body {
+        margin-left: 0; // Remove body margin for mobile
+        padding: 1rem; // Reduce content padding
+    }
+}

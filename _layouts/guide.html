@@ -5,29 +5,26 @@ layout: default
 {% include header.html %}
 
 <body>
-    <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
-                    <!-- Sidebar -->
-            <div class="sidebar">
-                <div class="sidebar-nav">
-                    <h2>{{ site.data.samplelist.docs_list_title }}</h2>
-                    {% for item in site.data.samplelist.toc %}
-                    <h3>{{ item.title }}</h3>
-                    <ul>
-                        {% for entry in item.subfolderitems %}
-                        <li>
-                            <a href="#" onclick="loadContent('{{ entry.url }}', this)"
-                                >{{ entry.page }}</a
-                            >
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% endfor %}
-                </div>
-            </div>
-            <!-- Content Container -->
-            <div id="content-container" class="content-container">
-                {{ content }}
-            </div>
+    <div class="sidebar">
+        <div class="sidebar-nav">
+            <h2>{{ site.data.samplelist.docs_list_title }}</h2>
+            {% for item in site.data.samplelist.toc %}
+            <h3>{{ item.title }}</h3>
+            <ul>
+                {% for entry in item.subfolderitems %}
+                <li>
+                    <a href="#" onclick="loadContent('{{ entry.url }}', this)"
+                        >{{ entry.page }}</a
+                    >
+                </li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="content-container" class="content-container">
+        {% if content %} {{ content }} {% else %} {% include_relative default.md
+        %} {% endif %}
     </div>
 
     <script>
@@ -40,11 +37,14 @@ layout: default
                     return response.text();
                 })
                 .then((data) => {
-                    document.getElementById("content-container").innerHTML = data;
+                    document.getElementById("content-container").innerHTML =
+                        data;
                     // Optional: Highlight the selected link
-                    document.querySelectorAll(".sidebar-nav a").forEach((link) => {
-                        link.classList.remove("active");
-                    });
+                    document
+                        .querySelectorAll(".sidebar-nav a")
+                        .forEach((link) => {
+                            link.classList.remove("active");
+                        });
                     element.classList.add("active");
                 })
                 .catch((error) => {

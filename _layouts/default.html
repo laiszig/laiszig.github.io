@@ -39,10 +39,13 @@ layout: compress
     </style>
 
 </head>
+
 <body>
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
         {% if page.layout == "post" %}
             <div class="post">
+        {% elsif page.layout == "guide" %}
+            <div class="guide">
         {% else %}
             {% if showHeader != true %}
                 <div class="page {{ page.title | downcase }}">
@@ -51,10 +54,9 @@ layout: compress
             {% endif %}
         {% endif %}
 
-            {{ content }}
-            </div>
-                </div>
-            </div>
+        {{ content }}
+        </div>
     </div>
 </body>
+
 </html>
