@@ -3,7 +3,7 @@ layout: guide
 title: Guide
 ---
 
-<div class="sidebar">
+<!-- <div class="sidebar">
     <div class="sidebar-nav">
         <h2>{{ site.data.samplelist.docs_list_title }}</h2>
         {% for item in site.data.samplelist.toc %}
@@ -19,14 +19,15 @@ title: Guide
         </ul>
         {% endfor %}
     </div>
-</div>
+</div> -->
 
-<!-- Container where the content will be injected -->
-<div id="content-container">
-    <!-- Default or welcome content goes here -->
-    <p>
+<div class="content-container">
+    Default or welcome content goes here
+    <h3>
         Welcome to my Software Engineer guide. Click on the items in the sidebar
         to load the content.
+    </h3>
+    <p>
         <br />
         This guide is dedicated to developing and solidifying my knowledge of
         software engineering concepts. The goal is to include key principles and
@@ -37,7 +38,7 @@ title: Guide
     </p>
 </div>
 
-<script>
+<!-- <script>
     function loadContent(url) {
         fetch(url)
             .then((response) => {
@@ -47,4 +48,4 @@ title: Guide
                 document.getElementById("content-container").innerHTML = data;
             });
     }
-</script>
+</script> -->

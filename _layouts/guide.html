@@ -2,94 +2,56 @@
 layout: default
 ---
 
-{% include header.html %} {{content}}
+{% include header.html %}
 
-<style>
-    :root {
-        --theme-color: #4b0082;
-        --sidebar-width: 24rem;
-        --sidebar-nav-link-margin: -0.5rem -1.5rem 0 0;
-    }
+<body>
+    <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
+                    <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-nav">
+                    <h2>{{ site.data.samplelist.docs_list_title }}</h2>
+                    {% for item in site.data.samplelist.toc %}
+                    <h3>{{ item.title }}</h3>
+                    <ul>
+                        {% for entry in item.subfolderitems %}
+                        <li>
+                            <a href="#" onclick="loadContent('{{ entry.url }}', this)"
+                                >{{ entry.page }}</a
+                            >
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- Content Container -->
+            <div id="content-container" class="content-container">
+                {{ content }}
+            </div>
+    </div>
 
-    /* Sidebar Container */
-    .sidebar {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: var(--sidebar-width);
-        height: 100%;
-        background-color: #5757575f;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-        z-index: 1000;
-        overflow-y: auto; /* Enables vertical scrolling */
-    }
-
-    /* Customize the scrollbar */
-    .sidebar::-webkit-scrollbar {
-        width: 8px; /* Adjust the width of the scrollbar */
-    }
-
-    .sidebar::-webkit-scrollbar-thumb {
-        background-color: var(
-            --theme-color
-        ); /* Color of the thumb (the draggable part) */
-        border-radius: 4px; /* Rounded corners */
-        border: 2px solid #5757575f; /* Border to give it a little separation from the background */
-    }
-
-    .sidebar::-webkit-scrollbar-thumb:hover {
-        background-color: #4b0082; /* Darken the thumb color on hover */
-    }
-
-    .sidebar::-webkit-scrollbar-track {
-        background-color: rgba(
-            0,
-            0,
-            0,
-            0.1
-        ); /* Color of the track (background of scrollbar) */
-        border-radius: 4px; /* Rounded corners for the track */
-    }
-
-    /* Sidebar Navigation */
-    .sidebar-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .sidebar-nav li {
-        margin: 1rem 0;
-    }
-
-    .sidebar-nav a {
-        text-decoration: none;
-        /* color: #333; */
-        font-weight: bold;
-        display: block;
-        padding: 0.5rem;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
-
-    .sidebar-nav a:hover {
-        background-color: var(--theme-color);
-        /* text-decoration: underline; */
-        text-emphasis-color: #f8f9fa;
-    }
-
-    /* Sidebar Title */
-    .sidebar-nav h2 {
-        margin-bottom: 1rem;
-        font-size: 1.25rem;
-        color: var(--theme-color);
-    }
-
-    /* Adjust body content to avoid overlap with sidebar */
-    body {
-        margin-left: var(--sidebar-width);
-        padding: 2rem;
-        font-family: Arial, sans-serif;
-    }
-</style>
+    <script>
+        function loadContent(url, element) {
+            fetch(url)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.text();
+                })
+                .then((data) => {
+                    document.getElementById("content-container").innerHTML = data;
+                    // Optional: Highlight the selected link
+                    document.querySelectorAll(".sidebar-nav a").forEach((link) => {
+                        link.classList.remove("active");
+                    });
+                    element.classList.add("active");
+                })
+                .catch((error) => {
+                    console.error("Error fetching content:", error);
+                    document.getElementById("content-container").innerHTML =
+                        "<p>Error loading content. Please try again later.</p>";
+                });
+        }
+    </script>
+</body>
