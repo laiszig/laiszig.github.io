@@ -5,7 +5,8 @@ layout: default
 {% include header.html %}
 
 <body>
-    <div class="sidebar">
+    <!-- <button></button> toggle sidebar button here -->
+    <aside class="sidebar">
         <div class="sidebar-nav">
             <h2>{{ site.data.samplelist.docs_list_title }}</h2>
             {% for item in site.data.samplelist.toc %}
@@ -21,11 +22,13 @@ layout: default
             </ul>
             {% endfor %}
         </div>
-    </div>
-    <div id="content-container" class="content-container">
-        {% if content %} {{ content }} {% else %} {% include_relative default.md
-        %} {% endif %}
-    </div>
+    </aside>
+    <section class="content">
+        <article id="markdown-section" class="markdown-section">
+            {% if content %} {{ content }} {% else %} {% include_relative
+            default.md %} {% endif %}
+        </article>
+    </section>
 
     <script>
         function loadContent(url, element) {
@@ -37,7 +40,7 @@ layout: default
                     return response.text();
                 })
                 .then((data) => {
-                    document.getElementById("content-container").innerHTML =
+                    document.getElementById("markdown-section").innerHTML =
                         data;
                     // Optional: Highlight the selected link
                     document
@@ -49,7 +52,7 @@ layout: default
                 })
                 .catch((error) => {
                     console.error("Error fetching content:", error);
-                    document.getElementById("content-container").innerHTML =
+                    document.getElementById("markdown-section").innerHTML =
                         "<p>Error loading content. Please try again later.</p>";
                 });
         }
