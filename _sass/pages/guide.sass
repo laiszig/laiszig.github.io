@@ -1,0 +1,93 @@
+// Variables
+$theme-color: #4b0082 // Theme color for the guide
+$sidebar-width: 26rem // Sidebar width
+$content-max-width: 55em
+
+html, body
+  margin: 0
+  padding: 0
+  height: 100% // Full viewport height
+  display: block
+
+.content
+  margin-top: 125px
+  margin-left: 30rem
+  height: 100%
+  flex: 1
+
+.markdown-section
+  position: relative
+  max-width: $content-max-width
+  margin: 0 auto
+  padding: 2rem 45px
+  height: 100%
+
+.sidebar
+  position: fixed // Keeps sidebar in place while scrolling
+  left: 0
+  top: 0
+  width: $sidebar-width // Defined sidebar width
+  height: 100% // Full viewport height
+  background-color: rgba(87, 87, 87, 0.2) // Semi-transparent background
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1) // Subtle shadow for depth
+  padding: 2rem // Add inner spacing
+  z-index: 1000 // Keep above other elements
+  overflow-y: auto // Allow vertical scrolling
+
+  // Custom Scrollbar
+  &::-webkit-scrollbar
+    width: 8px // Narrow scrollbar width
+
+  &::-webkit-scrollbar-thumb
+    background-color: $theme-color // Scrollbar thumb color
+    border-radius: 4px // Rounded edges for thumb
+    border: 2px solid rgba(87, 87, 87, 0.37) // Separate thumb from track
+
+    &:hover
+      background-color: $theme-color // Darken on hover
+
+  &::-webkit-scrollbar-track
+    background-color: rgba(0, 0, 0, 0.1) // Track background color
+    border-radius: 4px // Rounded track edges
+
+  // Sidebar Navigation
+  &-nav
+    h2
+      margin-bottom: 1rem // Space below the title
+      font-size: 1.25rem // Slightly larger text
+      color: $theme-color // Use theme color
+
+    ul
+      list-style: none // Remove bullet points
+      padding: 0
+      margin: 0
+
+    li
+      margin: 1rem 0 // Space between items
+
+    a
+      text-decoration: none // Remove underline
+      font-weight: bold // Bold text
+      display: block // Full clickable area
+      padding: 0.5rem // Inner spacing
+      border-radius: 4px // Round edges
+      transition: background-color 0.3s // Smooth hover effect
+
+      &:hover
+        background-color: $theme-color // Highlight background
+        color: #f8f9fa // Light text color on hover
+
+@media (max-width: 576px)
+  .sidebar
+    position: static // Allow sidebar to flow with content
+    width: 100% // Full width for sidebar
+    height: auto // Adjust height
+    padding: 1rem // Adjust padding
+    box-shadow: none // Remove shadow
+
+  #content
+    margin-left: 0 // Remove left margin
+    padding: 1rem // Adjust content padding
+
+  body
+    flex-direction: column // Stack elements vertically

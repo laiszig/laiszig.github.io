@@ -1,5 +1,5 @@
 ---
-permalink: /guide/hello-world.markdown
+permalink: /guide/hello-world.md
 ---
 
 ### Hello World
