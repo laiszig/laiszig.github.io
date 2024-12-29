@@ -5,8 +5,8 @@ date: 2016-02-24 22:44
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
-    - markdown
-    - elements
+- markdown
+- elements
 star: true
 category: blog
 author: johndoe
@@ -15,12 +15,12 @@ description: Markdown summary with different options
 
 ## Basic formatting
 
-This note **demonstrates** some of what [Markdown][1] is _capable of doing_.
+This note **demonstrates** some of what [Markdown][1] is *capable of doing*.
 
 And that's how to do it.
 
 {% highlight html %}
-This note **demonstrates** some of what [Markdown][some/link] is _capable of doing_.
+This note **demonstrates** some of what [Markdown][some/link] is *capable of doing*.
 {% endhighlight %}
 
 ---
@@ -38,15 +38,10 @@ There are six levels of headings. They correspond with the six levels of HTML he
 #### Headings can be small
 
 {% highlight raw %}
-
 # Heading
-
 ## Heading
-
 ### Heading
-
 #### Heading
-
 {% endhighlight %}
 
 ---
@@ -60,26 +55,24 @@ There are six levels of headings. They correspond with the six levels of HTML he
 3. Number 3
 
 {% highlight raw %}
-
 1. Item 1
 2. A second item
 3. Number 3
-   {% endhighlight %}
+{% endhighlight %}
 
 ### Unordered list
 
--   An item
--   Another item
--   Yet another item
--   And there's more...
+* An item
+* Another item
+* Yet another item
+* And there's more...
 
 {% highlight raw %}
-
--   An item
--   Another item
--   Yet another item
--   And there's more...
-    {% endhighlight %}
+* An item
+* Another item
+* Yet another item
+* And there's more...
+{% endhighlight %}
 
 ---
 
@@ -90,9 +83,8 @@ There are six levels of headings. They correspond with the six levels of HTML he
 > Here is a quote. What this is should be self explanatory. Quotes are automatically indented when they are used.
 
 {% highlight raw %}
-
 > Here is a quote. What this is should be self explanatory.
-> {% endhighlight raw %}
+{% endhighlight raw %}
 
 ---
 
@@ -100,16 +92,15 @@ There are six levels of headings. They correspond with the six levels of HTML he
 
 URLs can be made in a handful of ways:
 
--   A named link to [Mark It Down][3].
--   Another named link to [Mark It Down](https://google.com/)
--   Sometimes you just want a URL like <https://google.com/>.
+* A named link to [Mark It Down][3].
+* Another named link to [Mark It Down](https://google.com/)
+* Sometimes you just want a URL like <https://google.com/>.
 
 {% highlight raw %}
-
--   A named link to [MarkItDown][3].
--   Another named link to [MarkItDown](https://google.com/)
--   Sometimes you just want a URL like <https://google.com/>.
-    {% endhighlight %}
+* A named link to [MarkItDown][3].
+* Another named link to [MarkItDown](https://google.com/)
+* Sometimes you just want a URL like <https://google.com/>.
+{% endhighlight %}
 
 ---
 
@@ -118,8 +109,8 @@ URLs can be made in a handful of ways:
 A horizontal rule is a line that goes across the middle of the page.
 It's sometimes handy for breaking things up.
 
-## {% highlight raw %}
-
+{% highlight raw %}
+---
 {% endhighlight %}
 
 ---
@@ -134,19 +125,17 @@ Markdown can also contain images. I'll need to add something here sometime.
 
 ![Markdowm Image][5]
 
-_Figure Caption_?
+*Figure Caption*?
 
 {% highlight raw %}
 ![Markdowm Image][/image/url]
-
 <figcaption class="caption">Photo by John Doe</figcaption>
 {% endhighlight %}
 
 ![Markdowm Image][5]
-
 <figcaption class="caption">Photo by John Doe</figcaption>
 
-_Bigger Images_?
+*Bigger Images*?
 
 {% highlight raw %}
 ![Markdowm Image][/image/url]{: class="bigger-image" }
@@ -161,7 +150,6 @@ _Bigger Images_?
 A HTML Example:
 
 {% highlight html %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,18 +166,18 @@ A CSS Example:
 
 {% highlight css %}
 pre {
-padding: 10px;
-font-size: .8em;
-white-space: pre;
+    padding: 10px;
+    font-size: .8em;
+    white-space: pre;
 }
 
 pre, table {
-width: 100%;
+    width: 100%;
 }
 
 code, pre, tt {
-font-family: Monaco, Consolas, Inconsolata, monospace, sans-serif;
-background: rgba(0,0,0,.05);
+    font-family: Monaco, Consolas, Inconsolata, monospace, sans-serif;
+    background: rgba(0,0,0,.05);
 }
 {% endhighlight %}
 

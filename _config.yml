@@ -1,9 +1,9 @@
 # main text of home
 title: Lais Ziegler
-bio: Dev in training... 👋
+bio: Backend Software Engineer
 
-# twitter summary info
-description: A blog about technology and stuff related
+# summary info
+description: Dev in training... 👋
 
 # if it's an external image, update below for true
 # better with square images
@@ -20,7 +20,7 @@ resume: true
 resume-external: true
 resume-url: https://google.com/?q=my+resume
 
-url: https://laiszig.github.io/
+url: https://laiszig.github.io
 # your url: https://USERNAME.github.io
 
 permalink: /:title/
@@ -31,13 +31,13 @@ permalink: /:title/
 # if you don't want comments in your posts, leave categories empty
 disqus:
     shortname: github # enter this from your disqus account
-    categories: [] # only show disqus for posts that have these categories
+    categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
 # facebook: myfacebook
 # twitter: mytwitter
 instagram: laiszig
-linkedin: lais-ziegler-4a4880101
+linkedin: lais-ziegler-4a4880101/
 github: laiszig
 email: laisziegler@gmail.com
 
@@ -47,7 +47,6 @@ authors:
         bio: Dev in training... 👋
         external-image: false
         picture: assets/images/profile.jpg
-        twitter: laiszig
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
@@ -55,7 +54,7 @@ authors:
 width: normal
 
 # if you don't need projects, comment the *projects* configs below
-# projects: true
+projects: true
 
 # if you don't need "about" or "blog", comment them out below
 about: true
@@ -103,3 +102,6 @@ compress_html:
             - stage
 
 exclude: ["README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vendor"]
+
+# Guide config
+description-guide: Software Engineer Guide
