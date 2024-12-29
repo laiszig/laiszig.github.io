@@ -1,8 +1,8 @@
 toc:
-    - title: Group 1
+    - title: Software Development
       subfolderitems:
-          - page: Thing 1
-            url: /thing1.html
+          - page: SOLID Principles
+            url: solid.md
     - title: Group 2
       subfolderitems:
           - page: Piece 1

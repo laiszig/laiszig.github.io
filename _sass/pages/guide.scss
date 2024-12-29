@@ -28,13 +28,13 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
 }
-@media (min-width: 38em) {
+@media (min-width: 48em) {
     .container {
         max-width: 32rem;
     }
 }
 @media (min-width: 56em) {
     .container {
-        max-width: 38rem;
+        max-width: 48rem;
     }
 }

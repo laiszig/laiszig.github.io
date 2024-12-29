@@ -21,7 +21,9 @@
 
 <div class="sidebar" id="sidebar">
     <div class="sidebar-item">
-        <p>{{ site.description-guide }}</p>
+        <a href="{{ site.url }}/guide">
+            <p>{{ site.description-guide }}</p>
+        </a>
     </div>
     <nav class="sidebar-nav">
         {% for item in site.data.samplelist.toc %}
@@ -29,7 +31,10 @@
         <ul>
             {% for entry in item.subfolderitems %}
             <li>
-                <a class="sidebar-nav-item" href="{{ entry.url }}"
+                <a
+                    class="sidebar-nav-item"
+                    href="#"
+                    onclick="loadContent('{{ entry.url }}', this)"
                     >{{ entry.page }}</a
                 >
             </li>
