@@ -1,14 +1,15 @@
 ---
-title: ":ramen: Indigo, minimalist jekyll theme"
+title: "Java Lambda Expressions"
 layout: post
 date: 2025-01-01 13:15
-tag: java, functional programming, lambda
-projects: true
-hidden: true
-description: "Java Lambda Expressions post breaking down key concepts, such as lambda syntax, functional interfaces, type inference, and variable capture."
-category: project
+headerImage: false
+tag:
+- java
+- functional programming
+- lambda
+category: blog
 author: laiszig
-externalLink: false
+description: Java Lambda Expressions post breaking down key concepts, such as lambda syntax, functional interfaces, type inference, and variable capture.
 ---
 
 # Java Lambda Expressions
