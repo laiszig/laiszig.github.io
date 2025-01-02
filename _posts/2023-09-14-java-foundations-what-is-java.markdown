@@ -1,7 +1,7 @@
 ---
 title: "[01] Java Foundations 1Z0-811 - What is Java?"
 layout: post
-date: 2023-14-09 18:00
+date: 2023-09-14 18:00
 tag: java, certification, 1Z0-811
 projects: true
 hidden: true
