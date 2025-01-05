@@ -2,13 +2,14 @@
 title: "[01] Java Foundations 1Z0-811 - What is Java?"
 layout: post
 date: 2023-09-14 18:00
-tag: java, certification, 1Z0-811
-projects: true
-hidden: true
+headerImage: false
+tag: 
+- java
+- certification
+-  1Z0-811
 description: "The first post of the series dedicated to the studies of the Java Foundations Exam (1Z0-811)"
-category: project
+category: blog
 author: laiszig
-externalLink: false
 ---
 
 Welcome to the first post of the series dedicated to the studies of the Java Foundations Exam (1Z0-811). This series will serve as a comprehensive guide, dissecting the crucial topics, concepts, and strategies needed to conquer this certification exam.
