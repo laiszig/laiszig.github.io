@@ -45,12 +45,12 @@ class PaymentService {
 }
 ```
 Finally, we create an instance of *PaymentService* and implement the interface method using a lambda:
+
 ```java
     PaymentService paymentService = new PaymentService();
-
     paymentService.handlePayment(amount -> System.out.println("Processing payment of $" + amount), 150.75);
-
 ```
+
 A lambda expression is matched to the parameter's type and transformed into a function that implements the corresponding interface. 
 - Java lambda expressions can **only** be used when the type they match is an interface with a single *abstract* method.
 
