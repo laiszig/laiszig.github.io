@@ -2,7 +2,7 @@ toc:
     - title: Software Development
       subfolderitems:
           - page: SOLID Principles
-            url: /solid.md
+            url: solid.md
     - title: Group 2
       subfolderitems:
           - page: Piece 1
