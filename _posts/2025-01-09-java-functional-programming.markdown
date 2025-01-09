@@ -502,3 +502,15 @@ Adopting functional programming (FP) in Java can be challenging for developers c
 
 ### Conclusion:
 Functional programming brings significant advantages in terms of clarity, maintainability, and testing. However, adopting FP in Java requires careful consideration and a shift in mindset before fully transitioning.
+
+**Sources:** 
+
+- K. Sierra, B. Bates, and T. Gee, Head First Java: A Brain-Friendly Guide. 2022.
+
+- Baeldung CS, 2024. Functional Programming. Available at: https://www.baeldung.com/cs/functional-programming [Accessed 03 January 2025].
+
+- Baeldung, 2024. Functional Programming in Java. Available at: https://www.baeldung.com/java-functional-programming#functional_programming_techniques [Accessed 03 January 2025].
+
+- Jenkov, J., 2023. Java Functional Programming. Available at: https://jenkov.com/tutorials/java-functional-programming/index.html [Accessed 03 January 2025].
+
+- freecodecamp, 2024. Functional Programming in Java. Available at: https://www.freecodecamp.org/news/functional-programming-in-java/ [Accessed 03 January 2025].
