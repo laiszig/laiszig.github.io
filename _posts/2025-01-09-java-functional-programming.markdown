@@ -1,3 +1,19 @@
+---
+title: "Java Functional Programming"
+layout: post
+date: 2025-01-09 15:15
+headerImage: false
+tag:
+- java
+- functional programming
+- functions
+- recursion
+- function composition
+category: blog
+author: laiszig
+description: Java Functional Programming post breaking down key concepts, such as higher-order functions, function composition, recursion and currying. 
+---
+
 # Java functional programming
 
 Functional programming (FP) is a **programming paradigm** that focuses on creating programs using pure functions that always produce the same output for a given input and have no side effects, avoiding changes in state or mutable data. This approach is **declarative**, emphasizing what to **do** rather than **how** to do it. 
