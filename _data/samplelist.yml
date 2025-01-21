@@ -3,11 +3,21 @@ toc:
       subfolderitems:
           - page: SOLID Principles
             url: solid.md
-    - title: Group 2
-      subfolderitems:
-          - page: Piece 1
-            url: /piece1.html
-    - title: Group 3
-      subfolderitems:
-          - page: Widget 1
-            url: /widget1.html
+          - page: Clean Code
+            url: clean-code.md
+    - title: Microservices
+      # subfolderitems:
+      #     - page: Piece 1
+      #       url: /piece1.html
+    - title: Database
+      # subfolderitems:
+      #     - page: Widget 1
+      #       url: /widget1.html
+    - title: Infrastructure
+      # subfolderitems:
+      #     - page: Widget 1
+      #       url: /widget1.html
+    - title: Workflow
+      # subfolderitems:
+      #     - page: Widget 1
+      #       url: /widget1.html
