@@ -5,6 +5,8 @@ toc:
             url: solid.md
           - page: Clean Code
             url: clean-code.md
+          - page: Design Patterns
+            url: design-patterns.md
     - title: Microservices
       # subfolderitems:
       #     - page: Piece 1
