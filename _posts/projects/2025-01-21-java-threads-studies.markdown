@@ -11,7 +11,7 @@ category: project
 author: laiszig
 ---
 
-This repository serves as a comprehensive resource for understanding and implementing various threading and concurrency models in Java. Whether you're just starting to explore multithreading or looking to refine your expertise in concurrent programming, this repository offers practical examples and projects to guide your learning.
+This repository serves as a comprehensive resource for understanding and implementing various threading and concurrency models in Java.
 
 ---
 
