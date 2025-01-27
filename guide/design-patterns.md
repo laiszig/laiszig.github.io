@@ -104,3 +104,48 @@ The Factory Pattern is a **creational design pattern** that provides an interfac
 -   Avoid hardcoding types in the factory; leverage configuration or parameters to decide object creation.
 
 #### ➡️ GitHub repository demonstrating the [Factory Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/factory), featuring examples of different use cases, common mistakes, and best practices to ensure maintainability and scalability.
+
+---
+
+# Abstract Factory Pattern
+
+The Abstract Factory Pattern is a creational design pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes. It is often used when the system needs to be independent of the way its objects are created, composed, and represented.
+
+## Key Features
+- **Creates Families of Objects**: The Abstract Factory is designed to create groups of related objects, ensuring consistency within the family.
+- **Encapsulates Object Creation**: The pattern encapsulates the creation logic, keeping it separate from the client code.
+- **Promotes Scalability**: It allows for easy expansion of object families without modifying the existing code.
+
+<img src="/assets/images/guide/abstract-factory.jpg" height="65%" width="65%">
+
+1. **Abstract Products**: Define the interfaces for the objects that the factory creates.
+2. **Concrete Products**: Implement the interfaces defined by the abstract products.
+3. **Abstract Factory**: Declares interfaces for creating abstract products.
+4. **Concrete Factory**: Implements the creation methods for specific product families.
+5. **Client Code**: Uses the factory interfaces to create objects, without knowing their specific types.
+
+## Use Cases
+- When the application needs to support multiple object families that are designed to work together.
+- When the system needs to be independent of how its products are created.
+- When adding new product families should require minimal changes to the codebase.
+
+## Benefits and Drawbacks
+**Pros**
+- Ensures compatibility between related objects.
+- Supports Single Responsibility Principle and reduces code duplication by extracting and centralizing object creation.
+- Supports open/closed principle by allowing new families to be added without altering existing code.
+
+**Cons**
+- Increases the complexity of the codebase with additional interfaces and classes.
+- Can result in a rigid design if many families are predefined and rarely change.
+- May introduce unnecessary abstraction when there is no need for multiple families of products.
+
+## Implementation Notes
+- Create an interface or abstract class for the factory, defining methods to create each type of product.
+- Implement concrete factories for each family of related objects.
+- Define abstract products with interfaces or abstract classes.
+- Implement concrete products for each product type in the family.
+- Use dependency injection to pass the desired factory into the client.
+
+#### ➡️ GitHub repository showcasing the [Abstract Factory Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/abstract-factory)
+
