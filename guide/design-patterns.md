@@ -149,3 +149,48 @@ The Abstract Factory Pattern is a creational design pattern that provides an int
 
 #### ➡️ GitHub repository showcasing the [Abstract Factory Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/abstract-factory)
 
+---
+
+# Builder Pattern
+
+The Builder Pattern is a creational design pattern that provides a step-by-step process to construct complex objects. 
+It separates the construction process from the representation, allowing the same construction process to create different representations.
+
+## Key Features
+- **Step-by-Step Construction**: The pattern focuses on building an object incrementally.
+- **Separates Construction Logic**: Keeps the object creation process separate from the object itself.
+- **Handles Complex Objects**: Particularly useful for creating objects with multiple optional parameters or complex setups.
+
+## Use Cases
+- When an object has many optional attributes or requires a specific sequence of initialization steps.
+- To avoid telescoping constructors or overly complex constructors.
+- When the construction process must allow for different representations of the final product.
+
+## Benefits and Drawbacks
+**Pros**
+- Simplifies the creation of complex objects with multiple configuration options.
+- Enhances code readability and maintainability by organizing the object creation logic.
+- Provides control over the construction process, ensuring a valid and consistent object state.
+
+**Cons**
+- Increases the number of classes and code complexity due to the creation of additional builder classes.
+- May feel unnecessary for simple objects with few attributes.
+
+## Structure
+1. **Builder Interface**: Defines the methods for constructing parts of the object.
+2. **Concrete Builder**: Implements the builder interface to construct and assemble the parts of the product.
+3. **Product**: Represents the complex object being built.
+4. **Director**: Controls the construction process by using the builder's methods.
+5. **Client**: The client code creates a builder object, passes it to the director and then initiates the construction process.
+
+<img src="/assets/images/guide/builder.jpg" height="60%" width="60%">
+
+
+## Implementation Notes
+- Define a `Builder` interface with methods to set each property or part of the product.
+- Create concrete builder classes to implement these methods.
+- Use a `Director` class to control the construction process by calling the builder methods in a specific sequence.
+- Return the final product using a `build()` method in the builder.
+
+#### ➡️ GitHub repository showcasing the [Builder Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/builder)
+
