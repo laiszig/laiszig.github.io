@@ -194,3 +194,46 @@ It separates the construction process from the representation, allowing the same
 
 #### ➡️ GitHub repository showcasing the [Builder Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/builder)
 
+---
+
+# Prototype Pattern
+
+The Prototype Pattern is a creational design pattern that allows objects to be cloned efficiently. Instead of creating new instances from scratch, it enables copying an existing object, preserving its state while allowing modifications if needed.
+
+## Key Features
+- **Object Cloning**: Instead of creating new objects from scratch, it duplicates existing ones.
+- **Improves Performance**: Reduces the overhead of complex object creation.
+- **Preserves Object Structure**: Ensures that copied objects maintain the original’s structure and attributes.
+
+## Use Cases
+- When object creation is costly and time-consuming (e.g., database queries, API calls).
+- When an application needs multiple similar objects with slight variations.
+- When objects need to be created dynamically at runtime instead of being predefined.
+
+## Benefits and Drawbacks
+**Pros**
+- Enhances performance by avoiding repetitive object creation.
+- Reduces dependencies on constructors and avoids complex initialization logic.
+- Provides flexibility in object creation with minimal changes.
+
+**Cons**
+- Requires careful handling of deep vs. shallow copies to avoid unintended references.
+- Cloning complex objects with deep hierarchies can be tricky.
+- May introduce unintended side effects if mutable objects are shared between copies.
+
+## Structure
+1. **Prototype Interface**: Declares a `clone()` method for copying objects.
+2. **Concrete Prototype**: Implements the prototype interface and defines how the object is cloned.
+3. **Client**: Uses the prototype to create new objects by copying an existing instance.
+<img src="/assets/images/guide/basic-prototype.jpg" height="50%" width="50%">
+
+### Prototype Pattern with Registry
+1. The Registry can be used to store a set of pre-built objects that are ready to be copied.
+<img src="/assets/images/guide/registry-prototype.jpg" height="50%" width="50%">
+
+## Implementation Notes
+- Use **shallow cloning** when the object contains only primitive fields or immutable objects.
+- Use **deep cloning** when the object has references to mutable objects that need to be copied separately.
+- Implement the `clone()` method using built-in cloning mechanisms (e.g., Java’s `Cloneable` interface) or custom copying logic.
+
+#### ➡️ GitHub repository showcasing the [Prototype Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/singleton)
