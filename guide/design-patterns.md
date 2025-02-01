@@ -237,3 +237,45 @@ The Prototype Pattern is a creational design pattern that allows objects to be c
 - Implement the `clone()` method using built-in cloning mechanisms (e.g., Java’s `Cloneable` interface) or custom copying logic.
 
 #### ➡️ GitHub repository showcasing the [Prototype Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/singleton)
+
+---
+
+# Adapter Pattern
+
+The Adapter Pattern is a structural design pattern that allows incompatible interfaces to work together. It acts as a bridge between two interfaces, enabling one system to use another without modifying its source code.
+
+## Key Features
+- **Bridges Incompatible Interfaces**: Allows objects with different interfaces to communicate.
+- **Encapsulates Adaptation Logic**: Keeps the original class and client code unchanged.
+- **Improves Code Reusability**: Enables integration with existing components without altering them.
+
+## Use Cases
+- When you need to use an existing class but its interface doesn’t match what your code expects.
+- When integrating third-party libraries or legacy code that cannot be modified.
+- When migrating systems while maintaining backward compatibility with old components.
+
+## Structure
+1. **Client**: The component that interacts with the target interface. 
+2. **Target Interface**: Defines the expected interface used by the client.
+3. **Adapter**: A wrapper that translates requests from the client into a format the adaptee understands.
+4. **Adaptee**: The existing class with an incompatible interface. 
+
+<img src="/assets/images/guide/adapter.jpg" height="50%" width="50%">
+
+## Benefits and Drawbacks
+**Pros**
+- Increases code reusability by allowing existing classes to be used in new ways.
+- Decouples code, making it easier to switch to different implementations.
+- Provides a clean separation between interface conversion logic and business logic.
+
+**Cons**
+- Adds extra complexity by introducing an additional layer.
+- Can impact performance if too many adapters are used.
+- May lead to excessive use, making the codebase harder to maintain.
+
+## Implementation Notes
+- Implement the adapter as a **class** (object adapter) or **inheritance-based** (class adapter).
+- Ensure that the adapter correctly delegates functionality without modifying the original adaptee.
+- Keep the adapter lightweight to minimize performance overhead.
+
+#### ➡️ GitHub repository demonstrating the [Adapter Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/adapter)
