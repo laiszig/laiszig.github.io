@@ -279,3 +279,48 @@ The Adapter Pattern is a structural design pattern that allows incompatible inte
 - Keep the adapter lightweight to minimize performance overhead.
 
 #### ➡️ GitHub repository demonstrating the [Adapter Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/adapter)
+
+---
+
+# Decorator Pattern
+
+The Decorator Pattern is a structural design pattern that allows behavior to be dynamically added to individual objects without modifying their class. It provides a flexible alternative to subclassing for extending functionality.
+
+## Key Features
+- **Extends Object Functionality Dynamically**: Enhances behavior without altering the original class.
+- **Encapsulates Changes**: Keeps modifications separate from the main logic.
+- **Promotes Open/Closed Principle**: Allows extension without modifying existing code.
+
+## Use Cases
+- When you need to add responsibilities to objects at runtime.
+- When subclassing leads to an explosion of derived classes.
+- When modifications should be applied selectively and independently.
+
+## Benefits and Drawbacks
+**Pros**
+- Promotes flexible and reusable code by avoiding class inheritance.
+- Allows for combining multiple behaviors dynamically.
+- Keeps the core class simple and focused.
+
+**Cons**
+- Can introduce complexity with many small decorator classes.
+- Makes debugging more difficult due to multiple layers of wrapping.
+- Increases the number of objects in memory.
+
+## Structure
+1. **Component**: Defines the common interface for both the base class and decorators.
+2. **Concrete Component**: The primary class being extended.
+3. **Base Decorator (Abstract Class or Interface)**: Holds a reference to a component and delegates calls.
+4. **Concrete Decorators**: Implement new behaviors and modify the original object's behavior dynamically.
+5. **Client**: The Client can wrap components in multiple layers of decorators.
+
+<img src="/assets/images/guide/decorator.jpg" height="50%" width="50%">
+
+## Implementation Notes
+- Ensure decorators follow the same interface as the base component.
+- Use composition instead of inheritance to apply multiple decorators.
+- Keep decorators lightweight to minimize performance overhead.
+
+#### ➡️ GitHub repository demonstrating the [Decorator Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/decorator)
+
+
