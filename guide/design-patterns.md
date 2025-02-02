@@ -323,4 +323,45 @@ The Decorator Pattern is a structural design pattern that allows behavior to be 
 
 #### ➡️ GitHub repository demonstrating the [Decorator Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/decorator)
 
+---
 
+# Proxy Pattern
+
+The Proxy Pattern is a structural design pattern that provides a substitute or placeholder for another object. It controls access to the original object, adding an extra layer of control or functionality.
+
+## Key Features
+- **Controls Object Access**: Manages how and when the real object is accessed.
+- **Improves Performance**: Can defer resource-intensive operations until needed (lazy initialization).
+- **Enhances Security**: Restricts access based on permissions or validation.
+
+## Use Cases
+- **Virtual Proxy**: Delays object creation until it's actually needed (e.g., loading heavy resources like images).
+- **Protection Proxy**: Controls access based on authentication or permissions.
+- **Remote Proxy**: Represents objects in different locations, such as in distributed systems.
+- **Caching Proxy**: Stores results of expensive operations to improve performance.
+
+## Benefits and Drawbacks
+**Pros**
+- Improves system performance by reducing unnecessary operations.
+- Adds an extra layer of security and access control.
+- Helps in managing remote objects transparently.
+
+**Cons**
+- Introduces additional complexity and indirection.
+- Can lead to performance overhead if not managed properly.
+- Increases the number of classes in the system.
+
+## Structure
+1. **Service Interface or Abstract Class)**: Defines the common interface for both the real object and proxy.
+2. **Real Service**: The actual object being accessed.
+3. **Proxy**: Implements the same interface as the real subject and controls access.
+4. **Client**: Should work with both services and proxies via the same interface. This way you can pass a proxy into any code that expects a service object.
+
+<img src="/assets/images/guide/proxy.jpg" height="50%" width="50%">
+
+## Implementation Notes
+- Ensure proxies do not introduce unnecessary delays or complexity.
+- Use lazy initialization where applicable to improve performance.
+- Be mindful of thread safety when using proxies in concurrent environments.
+
+#### ➡️ GitHub repository demonstrating the [Proxy Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/proxy)
