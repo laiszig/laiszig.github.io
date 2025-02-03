@@ -84,14 +84,13 @@ Inheritance is a mechanism that allows one class (subclass) to acquire propertie
 
 | Feature       | Association           | Aggregation         | Composition        | Inheritance          |
 |--------------|----------------------|---------------------|--------------------|----------------------|
-| **Definition** | Relationship between two independent classes | "Has-a" relationship with independent lifecycle | "Part-of" relationship with dependent lifecycle | "Is-a" relationship between parent and child classes |
+| **Definition** | Relationship between two independent classes | "Has-a" relationship | "Part-of" relationship | "Is-a" relationship between parent and child classes |
 | **Dependency** | No dependency | Weak dependency | Strong dependency | Strong dependency |
 | **Lifecycle** | Objects can exist independently | Objects can exist independently | Objects cannot exist independently | Subclass depends on superclass |
 | **Ownership** | No ownership | No strict ownership | Strong ownership | Hierarchical ownership |
 | **Strength** | Weak | Medium | Strong | Strong |
 | **Cardinality** | One-to-one, One-to-many, Many-to-many, Many-to-one | One-to-one, one-to-many, many-to-one, many-to-many | One-to-one, One-to-many | One-to-one |
-| **Example** | University and Professor | Observer pattern (Subject and Observers) | Strategy pattern (Context and Strategy) | Template Method pattern (Base and Derived Classes) |
-| **Representation** | Objects interact | Contained objects can exist independently | Contained objects depend on the owner | Derived class extends base class |
+| **Representation** | Uses a direct reference | Uses a reference to the contained object(s) | Contains instances of the contained object(s) | Derived class extends base class |
 
 ## Conclusion
 Understanding how classes relate to each other is fundamental in object-oriented design. The choice between **association, aggregation, composition, and inheritance** impacts modularity, reusability, and maintainability.
