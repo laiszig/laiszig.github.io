@@ -357,7 +357,7 @@ The Proxy Pattern is a structural design pattern that provides a substitute or p
 3. **Proxy**: Implements the same interface as the real subject and controls access.
 4. **Client**: Should work with both services and proxies via the same interface. This way you can pass a proxy into any code that expects a service object.
 
-<img src="/assets/images/guide/proxy.jpg" height="50%" width="50%">
+<img src="/assets/images/guide/proxy.jpg" height="60%" width="60%">
 
 ## Implementation Notes
 - Ensure proxies do not introduce unnecessary delays or complexity.
@@ -365,3 +365,46 @@ The Proxy Pattern is a structural design pattern that provides a substitute or p
 - Be mindful of thread safety when using proxies in concurrent environments.
 
 #### ➡️ GitHub repository demonstrating the [Proxy Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/proxy)
+
+---
+
+# Chain of Responsibility Pattern
+
+The Chain of Responsibility Pattern is a behavioral design pattern that allows multiple objects to handle a request sequentially without the sender knowing which object will handle it. Each handler processes the request or passes it to the next handler in the chain.
+
+## Key Features
+- **Decouples Senders and Receivers**: The sender does not need to know which object will handle the request.
+- **Flexible Processing**: Requests can be handled by multiple handlers or passed down the chain.
+- **Promotes Reusability**: Handlers can be reused and restructured easily.
+
+## Use Cases
+- **Event Handling**: UI frameworks use this to pass events (e.g., key presses) through a chain of components.
+- **Logging Frameworks**: Log messages can pass through different levels (INFO, DEBUG, ERROR).
+- **Request Validation**: Different validation steps can be applied in a sequence.
+
+## Benefits and Drawbacks
+**Pros**
+- Reduces coupling between senders and receivers.
+- Improves code maintainability and scalability.
+- Enables dynamic ordering of handlers.
+
+**Cons**
+- Can be difficult to debug if the chain is long.
+- May result in performance overhead if too many handlers are involved.
+- No guarantee that a request will be handled if no suitable handler is found.
+
+## Structure
+1. **Handler (Interface or Abstract Class)**: Defines a method to process requests and a reference to the next handler.
+2. **Base Handler**: Optional class where you can put the boilerplace code that's common to all handler classes.
+3. **Concrete Handlers**: Contain the actual code for processing requests. They implement request processing and decide whether to handle or forward the request.
+4. **Client**:  May compose chains just once or compose them dynamically, it sends requests without knowing the specific handler.
+
+<img src="/assets/images/guide/chain-of-responsibility.jpg" height="60%" width="60%">
+
+## Implementation Notes
+- Ensure handlers are ordered correctly to avoid unexpected behavior.
+- Implement a default handler to avoid unprocessed requests.
+- Be mindful of potential infinite loops if the chain is misconfigured.
+
+#### ➡️ GitHub repository demonstrating the [Chain of Responsibility Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/chain-of-responsibility)
+
