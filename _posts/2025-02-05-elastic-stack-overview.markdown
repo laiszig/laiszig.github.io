@@ -17,7 +17,7 @@ description: Understanding the Elastic stack and its tools.
 
 The Elastic Stack is a suite of powerful tools developed and maintained by the creators of Elasticsearch.
 
-<img src="/assets/images/post/elastic-stack.jpg" height="30%" width="30%">
+<img src="/assets/images/post/elastic-stack.jpg" height="50%" width="50%">
 
 At the core of this stack is Elasticsearch, the search and analytics engine that powers data retrieval and analysis. Surrounding it are complementary technologies designed to enhance its capabilities, though some can also be used independently.
 
