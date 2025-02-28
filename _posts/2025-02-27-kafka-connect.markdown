@@ -1,5 +1,5 @@
 ---
-title: "Apache Kafka Overview"
+title: "Kafka Connect - Streamlining Data Integration"
 layout: post
 date: 2025-02-27 11:40
 headerImage: false
