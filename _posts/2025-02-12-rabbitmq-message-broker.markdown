@@ -81,7 +81,6 @@ AMQP is a **reliable** and **interoperable** messaging protocol that facilitates
 AMQP simplifies the technical complexity of connecting diverse systems and applications, allowing you to focus on higher-value tasks, such as responding to real-time information and optimizing workflows.
 
 # RabbitMQ
-
 RabbitMQ is a powerful, open-source message broker, often referred to as **Message-Oriented Middleware**. It is the most popular implementation of the AMQP protocol and provides a robust and flexible messaging platform designed to interoperate with other messaging systems. This means you can easily integrate RabbitMQ with other AMQP providers.
 
 #### Key Features:
