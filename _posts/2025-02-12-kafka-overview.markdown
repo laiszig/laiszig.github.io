@@ -3,7 +3,7 @@ title: "Apache Kafka Overview"
 layout: post
 date: 2025-02-13 10:00
 headerImage: false
-hidden: true
+hidden: false
 tag:
     - kafka
     - topics

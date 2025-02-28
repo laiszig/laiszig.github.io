@@ -3,7 +3,7 @@ title: "Apache Kafka Overview"
 layout: post
 date: 2025-02-27 11:40
 headerImage: false
-hidden: true
+hidden: false
 tag:
     - kafka
     - connect
