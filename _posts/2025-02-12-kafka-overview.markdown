@@ -40,6 +40,62 @@ Over time, Kafka evolved beyond a simple messaging system into a full-fledged st
 - **Kafka Streams** – Enables real-time stream processing.
 - **KSQL** – Provides a SQL-like interface for querying streaming data.
 
+##### Kafka Solution Patterns - When to Use What?
+Kafka provides various patterns for different use cases.
+
+###### 1. Data Integration
+When dealing with multiple independent systems that generate, store, and own data, Kafka acts as a central hub to send and share specific parts of the data. This can be achieved using the **Kafka Broker** as the core message broker handling data distribution, **Kafka Client API** to create direct producer/consumer interactions or **Kafka Connect** for integrating external systems.
+
+- Services that share data send it to Kafka Brokers.
+- Consumers interested in the data retrieve it from Kafka Brokers.
+
+<img src="/assets/images/post/kafka-1-data-integration.jpg" height="50%" width="50%">
+
+**Advantages:**
+- Decoupling of producers from consumers.
+- Reliability and fault tolerance.
+- Horizontal scalability.
+- Performance benefits for time-sensitive data.
+- Extensibility for different systems.
+
+**Choosing Between Kafka Client APIs and Kafka Connect**
+- **Bespoke (custom-built) systems**: Use Kafka Client APIs for direct control.
+- **COTS (Commercial Off-The-Shelf) products**: Use Kafka Connect when possible.
+- **If no Kafka Connect connector exists for a COTS product**: Develop a custom connector rather than using raw producer/consumer APIs.
+
+##### 2. Real-Time Stream Processing in Microservice Architecture
+For real-time stream processing applications using a **microservice** architecture, leverage:
+- **Kafka Broker**: Provides a backbone infrastructure, making data available to microservices.
+- **Kafka Client APIs (Producers only)**: Used to generate data streams.
+- **Kafka Streams**: Handles business logic and stream processing efficiently.
+
+<img src="/assets/images/post/kafka-2-microservices.jpg" height="50%" width="50%">
+
+**Why Kafka Streams?**
+- Regular Kafka consumers lack advanced stream processing features.
+- Kafka Streams provides better efficiency and scalability.
+- If using COTS applications, prefer **Kafka Connect** over custom solutions.
+
+##### Real-Time Stream Processing in Data Warehouses and Data Lakes
+For integrating real-time data into a **Data Warehouse** or **Data Lake**:
+1. **Collect** data from multiple source systems into a Kafka cluster.
+2. **Sink** data into a Data Lake for further processing.
+3. **Process** the data using batch or stream processing frameworks.
+4. **Query** real-time summaries using **KSQL**.
+
+<img src="/assets/images/post/kafka-3-data-lake.jpg" height="50%" width="50%">
+
+**Role of KSQL:**
+- Allows using Kafka as a real-time data warehouse.
+- Supports SQL-like queries for real-time analytics.
+- Generates live summaries that update every second/millisecond.
+
+**Final Step:**
+- Kafka primarily moves data into the **Lakehouse**.
+- **Spark Structured Streaming** handles the rest of the real-time processing within the lakehouse environment.
+
+---
+
 #### Kafka in the Enterprise Ecosystem
 Kafka serves as the central hub in a real-time data ecosystem. Data flows seamlessly from producers to consumers with minimal latency, often in milliseconds. Its **decoupled architecture** ensures flexibility and producers don’t need to know who will consume the data, and consumers can be added or modified without disrupting the system.
 By adopting Kafka, organizations can achieve scalable, real-time data integration, ensuring critical business events are processed instantly. In the next sections, we’ll explore Kafka’s core concepts, Kafka Connect, Kafka Streams, and when to use each component.
@@ -52,7 +108,7 @@ Apache Kafka is built on a set of core components that enable efficient, distrib
 
 A **producer** is an application that sends data (messages) to Kafka. Each message is simply an array of bytes, and the producer is responsible for formatting and sending them to the correct Kafka topic.
 
-######## **Examples of Producers:**
+##### **Examples of Producers:**
 - **Sending a data file to Kafka**: Each line of the file can be sent as a separate message.
 - **Streaming database records**: Each row of a database table can be converted into a Kafka message.
 - **Query results as messages**: A producer application can execute a query, fetch the results, and stream each row as a message.
@@ -129,14 +185,14 @@ In a scenario where we want to bring all data from multiple sources to a data ce
 These producers are going to send the data as messages to the Kafka topic. The next thing that you want to do is to create the consumer.  
 The consumer is going to read the data from the Kafka topic and write it to the data center. All we want to do is to bring the data to the data center as quickly as we can.  
 
-######## The Problem: Scale
+##### The Problem: Scale
 You have hundreds or maybe thousands of producers pushing data into a single topic.  
 **How do we handle the volume and velocity at the broker?** We can create a large Kafka cluster and partition the topic.  
 
 So the topic is partitioned and distributed across the cluster. Now every broker has got a topic partition, so it can take the data from a producer and store it in the partition.  
 On the data source side, you have hundreds of producers and a bunch of brokers to share the workload.  
 
-######## Why Partitioning?
+##### Why Partitioning?
 Partitioning is not only a solution to increase storage capacity but also a method to distribute the workload. Kafka topic partitions are the core idea that makes Kafka a distributed and scalable system.
 **Partitions are the most valuable concept to understand how Kafka behaves as a distributed and scalable platform.**  
 
