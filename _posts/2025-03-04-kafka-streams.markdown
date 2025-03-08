@@ -57,27 +57,27 @@ Kafka Streams continuously reads data from Kafka topics and processes it in real
    - Kafka Streams internally creates three logical tasks (one per partition) for parallel processing.
    - These tasks are then assigned to application threads.
 
-<img src="/assets/images/post/k-streams-fixed-logical-tasks.jpg" height="50%" width="50%">
+<img src="/assets/images/post/k-streams-fixed-logical-tasks.jpg" height="70%" width="70%">
 
 2. **Scaling Up**
    - If the application runs on a single machine with two threads, Kafka Streams assigns tasks accordingly.
    - Uneven task distribution can occur if threads are not enough.
    - Increasing the number of threads allows better parallelism and workload sharing.
 
-<img src="/assets/images/post/k-streams-multi-thread.jpg" height="50%" width="50%">
+<img src="/assets/images/post/k-streams-multi-thread.jpg" height="70%" width="70%">
 
 3. **Scaling Out**
    - Deploying another instance of the application on a different machine creates a new thread (T3), automatically redistributing tasks.
    - This process, called **task reassignment**, ensures workload balancing across multiple instances.
    - If the number of instances exceeds the available partitions, extra instances remain idle.
 
-<img src="/assets/images/post/k-streams-instances.jpg" height="50%" width="50%">
+<img src="/assets/images/post/k-streams-instances.jpg" height="70%" width="70%">
 
 4. **Fault Tolerance**
    - If an instance crashes, Kafka Streams automatically reassigns its tasks to the remaining running instances.
    - This ensures seamless failure handling without user intervention.
 
-<img src="/assets/images/post/k-streams-fail-instance.jpg" height="50%" width="50%">
+<img src="/assets/images/post/k-streams-fail-instance.jpg" height="70%" width="70%">
 
 ### Why Use Kafka Streams?
 Kafka Streams provides a powerful yet lightweight solution for real-time stream processing. It simplifies complex event-driven processing with built-in scalability, fault tolerance, and dynamic workload balancing. Whether you’re working with sensor data, clickstreams, transactions, or log files, Kafka Streams ensures efficient real-time analytics with minimal operational overhead.
@@ -91,7 +91,7 @@ KSQL provides a **SQL-like interface** for Kafka Streams, making stream processi
 - **Interactive & Headless Modes** – Interactive for development, headless for production.
 
 ### How KSQL Works
-<img src="/assets/images/post/KSQL.jpg" height="50%" width="50%">
+<img src="/assets/images/post/KSQL.jpg" height="70%" width="70%">
 
 KSQL has three key components:
 1. **KSQL Engine** – Parses and executes KSQL queries.
