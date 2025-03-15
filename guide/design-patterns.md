@@ -3,6 +3,23 @@ layout: compress
 permalink: /guide/design-patterns.md
 ---
 
+## Table of Contents
+
+1. Creational Patterns
+- [Singleton Pattern](#singleton-pattern)
+- [Factory Pattern](#factory-pattern)
+- [Abstract Factory Pattern](#abstract-factory-pattern)
+- [Builder Pattern](#builder-pattern)
+- [Prototype Pattern](#prototype-pattern)
+2. Structural Patterns
+- [Adapter Pattern](#adapter-pattern)
+- [Decorator Pattern](#decorator-pattern)
+- [Proxy Pattern](#proxy-pattern)
+- [Bridge Pattern](#bridge-pattern)
+3. Behavioral Patterns
+- [Chain of Responsibility Pattern](#chain-of-responsibility-pattern)
+
+
 # Singleton Pattern
 
 The Singleton is a **creational design pattern** that ensures a class has only one instance and provides a global access point to it. It solves two main problems, so it violates the _Single Responsibility Principle_:
@@ -365,6 +382,46 @@ The Proxy Pattern is a structural design pattern that provides a substitute or p
 - Be mindful of thread safety when using proxies in concurrent environments.
 
 #### ➡️ GitHub repository demonstrating the [Proxy Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/proxy)
+
+---
+
+# Bridge Pattern
+The Bridge Pattern is a structural design pattern that decouples abstraction from implementation, allowing them to evolve independently. It helps manage complexity by preventing deep inheritance hierarchies and promoting composition. It is particularly useful in applications requiring multiple variations of a concept, cross-platform development, and runtime flexibility.
+
+## Key Features
+- **Decouples Abstraction and Implementation**: Enables changes to both independently.
+- **Enhances Maintainability**: Avoids class explosion by organizing variations in separate hierarchies.
+- **Supports Open/Closed Principle**: New abstractions and implementations can be added without modifying existing code.
+
+## Use Cases
+- **Multiple Variations of a Concept**: Avoids exponential subclass growth when combining characteristics (e.g., shapes with different colors).
+- **Runtime Implementation Switching**: Allows changing implementations dynamically (e.g., different database connections).
+
+## Benefits and Drawbacks
+**Pros**
+- Promotes better separation of concerns.
+- Increases flexibility and scalability.
+- Encourages cleaner, modular code.
+
+**Cons**
+- Adds complexity if the design doesn’t require separation.
+- Can be overkill for simple class structures.
+
+## Structure
+1. **Abstraction**: Defines high-level functionality and holds a reference to the implementation.
+2. **Implementation Interface**: Declares methods that concrete implementations must provide.
+3. **Refined Abstraction**: Extends the base abstraction, adding specific behaviors.
+4. **Concrete Implementations**: Provide specific implementations of the interface. Platform-specific code.
+5. **Client**: Usually only interested in working with the abstraction. It links the abstraction objecto to the implementation object.
+
+<img src="/assets/images/guide/chain-of-responsibility.jpg" height="60%" width="60%">
+
+## Implementation Notes
+- Identify independent dimensions that need separation.
+- Ensure the abstraction class delegates work to the implementation.
+- Favor composition over deep inheritance for better maintainability.
+
+#### ➡️ GitHub repository demonstrating the [Bridge Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/bridge)
 
 ---
 
