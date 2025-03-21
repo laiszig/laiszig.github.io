@@ -16,6 +16,7 @@ permalink: /guide/design-patterns.md
 - [Decorator Pattern](#decorator-pattern)
 - [Proxy Pattern](#proxy-pattern)
 - [Bridge Pattern](#bridge-pattern)
+- [Facade Pattern](#facade-pattern)
 3. Behavioral Patterns
 - [Chain of Responsibility Pattern](#chain-of-responsibility-pattern)
 
@@ -414,7 +415,7 @@ The Bridge Pattern is a structural design pattern that decouples abstraction fro
 4. **Concrete Implementations**: Provide specific implementations of the interface. Platform-specific code.
 5. **Client**: Usually only interested in working with the abstraction. It links the abstraction objecto to the implementation object.
 
-<img src="/assets/images/guide/chain-of-responsibility.jpg" height="60%" width="60%">
+<img src="/assets/images/guide/bridge.jpg" height="60%" width="60%">
 
 ## Implementation Notes
 - Identify independent dimensions that need separation.
@@ -422,6 +423,50 @@ The Bridge Pattern is a structural design pattern that decouples abstraction fro
 - Favor composition over deep inheritance for better maintainability.
 
 #### ➡️ GitHub repository demonstrating the [Bridge Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/bridge)
+
+---
+
+# Facade Pattern
+
+The **Facade Pattern** helps by providing a **simplified, high-level interface** to a complex system. Instead of exposing numerous components directly, a single facade class encapsulates their interactions, making it easier for clients to use the system. It acts as a **wrapper** that delegates client requests to appropriate subsystems. It does not replace the subsystems but rather simplifies their access. This approach improves usability while preserving flexibility for advanced users who still need direct access to the subsystems.
+
+## Key Features
+- **Encapsulation of Complexity**: The facade provides a straightforward API while keeping the complexity hidden.
+- **Delegation**: The facade forwards requests to the appropriate subsystem components.
+- **Decoupling**: Clients are decoupled from internal subsystem details, making it easier to modify and extend the system.
+
+## Use cases
+- **You have a complex system** with many interdependent components.
+- **You want to provide a simple interface** for clients who don’t need to know about low-level details.
+- **You want to decouple clients from subsystems**, improving maintainability.
+- **You need multiple entry points** for different users (e.g., a high-level API for general users and direct access for advanced users).
+
+## Structure
+1. **Facade**: Provides access to a specific part of the subsystem's functionality, directing the client's request.
+2. **Additional Facade**: Can be created to avoind polluting a single facade ith unrelated features.
+3. **Complex Subsystem**: Various objects. They aren't aware of the facade, but operate within the system and work with each other directly.
+4. **Client**: Uses the facade instead of calling the subsystem objects directly.
+
+<img src="/assets/images/guide/facade.jpg" height="60%" width="60%">
+
+## Implementation Notes
+1. **Identify a set of related components** that can be grouped together under a single facade.
+2. **Create a Facade class** that exposes a simplified interface.
+3. **Delegate requests** from the facade to the appropriate subsystem components.
+4. **Ensure the facade does not restrict direct access** to the underlying subsystems when needed.
+
+## Benefits and Drawbacks
+### Pros:
+- **Simplifies client interactions** by hiding complex subsystems.
+- **Improves maintainability** by decoupling client code from internal components.
+- **Enhances readability** with a cleaner, more intuitive API.
+- **Provides flexibility**, allowing direct access to subsystems if needed.
+
+### Cons:
+- **May introduce unnecessary layers** if the underlying system is already simple.
+- **Can become a God Object** if it tries to handle too much logic itself instead of delegating.
+
+#### ➡️ GitHub repository demonstrating the [Facade Pattern Implementation](https://github.com/laiszig/design-patterns/tree/main/facade)
 
 ---
 
