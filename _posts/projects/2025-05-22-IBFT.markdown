@@ -2,11 +2,7 @@
 title: "🛠️ Istambul-BFT Consensus Algorithm"
 layout: post
 date: 2025-05-22 09:45
-tag:
-- consensus
-- fault tolerance
-- byzantine
-- ibft
+tag: consensus
 headerImage: true
 projects: true
 hidden: false

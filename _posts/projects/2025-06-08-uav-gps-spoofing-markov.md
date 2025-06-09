@@ -2,9 +2,7 @@
 title: "📡 UAV GPS Performance Analysis using Discrete Markov Chains"
 layout: post
 date: 2025-06-08 14:10
-tag: 
-- markov chains
-- system performance
+tag: markov-chains
 headerImage: true
 projects: true
 hidden: false
