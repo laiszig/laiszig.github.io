@@ -1,5 +1,5 @@
 ---
-title: "🛠️ Istambul-BFT Consensus Algorithm"
+title: "🔗 Istambul-BFT Consensus Algorithm"
 layout: post
 date: 2025-05-22 09:45
 tag: consensus
