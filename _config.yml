@@ -105,3 +105,5 @@ exclude: ["README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vendor"]
 
 # Guide config
 description-guide: Software Engineer Guide
+
+markdown: kramdown
