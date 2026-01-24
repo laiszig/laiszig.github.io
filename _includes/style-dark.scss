@@ -1,15 +1,20 @@
+// Import dark theme variables first (must use @import for Jekyll's scssify filter compatibility)
 @import "base/variables-dark";
+
+// Import base styles
 @import "base/normalize";
 @import "base/syntax-dark";
 @import "base/general";
 @import "base/helpers";
 
+// Import page styles
 @import "pages/home-blog-projects";
 @import "pages/page";
 @import "pages/post";
 @import "pages/tags";
 @import "pages/guide";
 
+// Import component styles
 @import "components/author";
 @import "components/disqus";
 @import "components/footer";

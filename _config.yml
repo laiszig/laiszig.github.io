@@ -18,7 +18,7 @@ dark-theme: auto
 # and specify source (external or local).
 resume: true
 resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume-url: https://www.linkedin.com/in/la%C3%ADs-ziegler-4a4880101/
 
 url: https://laiszig.github.io
 # your url: https://USERNAME.github.io
@@ -28,10 +28,10 @@ permalink: /:title/
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-MYANALYTICS'
 
-# if you don't want comments in your posts, leave categories empty
-disqus:
-    shortname: github # enter this from your disqus account
-    categories: # only show disqus for posts that have these categories
+# # if you don't want comments in your posts, leave categories empty
+# disqus:
+#     shortname: github # enter this from your disqus account
+#     categories: # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
 # facebook: myfacebook

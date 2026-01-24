@@ -12,7 +12,7 @@ layout: page
 
 <ul class="skill-list">
 	<li>Backend - Java - Spring</li>
-	<li>Miroservices - REST</li>
+	<li>Microservices - REST</li>
 	<li>SQL - Oracle - NoSQL - MongoDB</li>
 	<li>Kafka - RabbitMQ</li>
 	<li>Unit Tests - JUnit - Mockito</li>
