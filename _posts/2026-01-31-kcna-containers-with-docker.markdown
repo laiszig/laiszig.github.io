@@ -15,7 +15,7 @@ author: laiszig
 description: The mechanics of containerization, Docker internals, and how Linux isolation makes it all work.
 ---
 
-## The Anatomy of Isolation: Linux Magic
+# Containers and Docker
 
 A container isn't a mini-VM; it’s just a **standard Linux process** wearing a very sophisticated disguise.
 
