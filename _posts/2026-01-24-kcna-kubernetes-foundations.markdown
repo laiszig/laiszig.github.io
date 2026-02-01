@@ -3,7 +3,7 @@ title: "Kubernetes Foundations"
 layout: post
 date: 2026-01-24 14:07
 headerImage: false
-hidden: false
+hidden: true
 tag:
     - kubernetes
     - kcna

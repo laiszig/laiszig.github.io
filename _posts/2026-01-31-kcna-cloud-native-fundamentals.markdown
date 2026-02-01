@@ -37,6 +37,7 @@ description: A comprehensive guide to the first topic of the KCNA exam, covering
 - **Improved observability**
 
 ### **Key Benefits**
+
 | Benefit | Description |
 |---------|-------------|
 | **Cost Savings** | Resources scaled as required, pay-as-you-use model |
